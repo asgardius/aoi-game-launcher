@@ -1,15 +1,15 @@
 {
-    "app-id": "asgardius.page.asteroidlauncher",
+    "app-id": "asgardius.page.aoilauncher",
     "runtime": "org.gnome.Platform",
     "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
-    "command": "asteroid-game-launcher",
+    "command": "aoi-game-launcher",
     "finish-args": [
         "--socket=wayland"
     ],
     "modules": [
         {
-            "name": "asteroid-game-launcher",
+            "name": "aoi-game-launcher",
             "buildsystem": "meson",
             "builddir": true,
             "sources": [

@@ -1,4 +1,4 @@
-project('asteroid-game-launcher',
+project('aoi-game-launcher',
   version: '0.0.0',
   meson_version: '>= 0.48.0',
 )

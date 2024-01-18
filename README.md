@@ -1,8 +1,6 @@
-# asteroid-game-launcher
+# aoi-game-launcher
 
-<img src=https://git.asgardius.company/asgardius/asteroid-game-launcher/raw/branch/master/data/asgardius.page.asteroidlauncher.png>
-
-A launcher for a space themed game
+A launcher for an anime role playing game game
 
 # Dependencies
 
@@ -16,8 +14,13 @@ A launcher for a space themed game
 
 # Install instructions
 To build this app
+
 meson . _build
+
 To install
+
 sudo ninja -C _build install
+
 To uninstall
+
 sudo ninja -C _build uninstall

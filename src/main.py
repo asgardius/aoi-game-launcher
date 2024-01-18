@@ -16,19 +16,19 @@ import os
 class Application(Gtk.Application):
 
     def __init__(self):
-        super().__init__(application_id='asgardius.page.asteroidlauncher')
-        GLib.set_application_name('Asteroid Game Launcher')
-        GLib.set_prgname('asgardius.page.asteroidlauncher')
+        super().__init__(application_id='asgardius.page.aoilauncher')
+        GLib.set_application_name('Aoi Game Launcher')
+        GLib.set_prgname('asgardius.page.aoilauncher')
 
     def do_activate(self):
         window = Gtk.ApplicationWindow(application=self)
-        window.set_icon_name('asgardius.page.asteroidlauncher')
+        window.set_icon_name('asgardius.page.aoilauncher')
 
         hbox = Gtk.VBox(spacing=6)
         window.add(hbox)
 
         label = Gtk.Label()
-        label.set_markup('<span font="12">Broadcasting with 100000 power watts\nfrom the asteroid belt</span>')
+        label.set_markup('<span font="12">Do you want a healer?\nNow you have one</span>')
         hbox.pack_start(label, True, True, 0)
 
         button = Gtk.Button.new_with_label("Install / Update")
