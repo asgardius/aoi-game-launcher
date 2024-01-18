@@ -47,7 +47,7 @@ class Application(Gtk.Application):
         terminal.spawn_sync(
             Vte.PtyFlags.DEFAULT,
             None,
-            ['/bin/bash', '-c', ' wget https://lily.asgardius.company/r3gamedlx64 -O '+home+'/.r3game && chmod +x '+home+'/.r3game && echo \"Game Installed\"'],
+            ['/bin/bash', '-c', ' wget https://lily.asgardius.company/midoridlx64 -O '+home+'/.r3game && chmod +x '+home+'/.asgardius.page.virtualxrpg && echo \"Game Installed\"'],
             None,
             GLib.SpawnFlags.DEFAULT,
         )
@@ -59,7 +59,7 @@ class Application(Gtk.Application):
 
     def on_play_clicked(self, button):
         home = os.path.expanduser("~")
-        subprocess.run([home+'/.r3game'])
+        subprocess.run([home+'/.asgardius.page.virtualxrpg'])
 
 
 if __name__ == "__main__":
