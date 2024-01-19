@@ -1,5 +1,7 @@
 # aoi-game-launcher
 
+<img src=https://git.asgardius.company/asgardius/aoi-game-launcher/raw/branch/master/data/asgardius.page.aoilauncher.png>
+
 A launcher for an anime role playing game game
 
 # Dependencies
