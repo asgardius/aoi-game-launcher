@@ -4,11 +4,17 @@
 
 A launcher for an anime role playing game game
 
+This launcher download background music track when running for first time
+
+All content is saved inside ~/.local/share/asgardius
+
 # Dependencies
 
 * python
 * GTK 3
 * VTE 3
+* Pygame for music playback
+* wget for updater
 
 # Build dependencies
 * Meson

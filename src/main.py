@@ -11,7 +11,8 @@ import subprocess
 gi.require_version('Gtk', '3.0')
 from gi.repository import GLib, Gtk, Vte
 import os
-
+import pygame
+from os.path import exists
 
 class Application(Gtk.Application):
 
@@ -40,6 +41,14 @@ class Application(Gtk.Application):
         hbox.pack_start(button, True, True, 0)
         #window.add(label)
         window.show_all()
+        pygame.init()
+        home = os.path.expanduser("~")
+        if not exists(home+"/.local/share/asgardius/"):
+            os.system('mkdir -p '+home+"/.local/share/asgardius/")
+        if not exists(home+"/.local/share/asgardius/asglauncher.wav"):
+            os.system('wget -O '+home+'/.local/share/asgardius/asglauncher.wav https://git.asgardius.company/asgardius/midori-school/raw/branch/main/music/crammin.wav')
+        pygame.mixer.music.load(home+"/.local/share/asgardius/asglauncher.wav")
+        pygame.mixer.music.play(-1)
 
     def on_install_clicked(self, button):
         home = os.path.expanduser("~")
@@ -47,7 +56,7 @@ class Application(Gtk.Application):
         terminal.spawn_sync(
             Vte.PtyFlags.DEFAULT,
             None,
-            ['/bin/bash', '-c', ' wget https://lily.asgardius.company/midoridlx64 -O '+home+'/.r3game && chmod +x '+home+'/.asgardius.page.virtualxrpg && echo \"Game Installed\"'],
+            ['/bin/bash', '-c', ' wget https://lily.asgardius.company/midoridlx64 -O '+home+'/.local/share/asgardius/asgardius.page.virtualxrpg && chmod +x '+home+'/.local/share/asgardius/asgardius.page.virtualxrpg && echo \"Game Installed\"'],
             None,
             GLib.SpawnFlags.DEFAULT,
         )
@@ -59,7 +68,9 @@ class Application(Gtk.Application):
 
     def on_play_clicked(self, button):
         home = os.path.expanduser("~")
-        subprocess.run([home+'/.asgardius.page.virtualxrpg'])
+        pygame.mixer.music.stop()
+        os.system(home+'/.local/share/asgardius/asgardius.page.virtualxrpg')
+        pygame.mixer.music.play(-1)
 
 
 if __name__ == "__main__":
